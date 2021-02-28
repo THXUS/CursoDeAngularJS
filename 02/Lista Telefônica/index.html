@@ -10,8 +10,11 @@
                 margin: auto;
                 margin-top: 21px ;
             }
-            .table{
-                margin-top: 25px;
+            .table {
+                margin-top: 20px;
+            }
+            .table tr,th{
+                text-align: center;
             }
             .form-control{
                 margin-bottom: 5px;
@@ -20,6 +23,7 @@
             .selecionado{
                 background-color: green;
             }
+
         </style>
         <script>
             angular.module("listaTelefonica",[]);
@@ -61,7 +65,7 @@
         <div class="jumbotron">
             <h3 >{{app}}</h3>
             <table class="table table-bordered">
-                <tr>
+                <tr class="elementos">
                     <th></th>
                     <th>Nome</th>
                     <th>Telefone</th>
@@ -85,4 +89,7 @@
             <button class=" btn btn-danger btn-block" ng-click="deletarContatos(contatos)" ng-disabled="!isContatoSelecionado(contatos)">Apagar Contato</button>
         </div>
     </body>
+    <div ng-include="'footer.html'">
+
+    </div>
 </html> 
