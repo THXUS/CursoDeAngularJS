@@ -96,7 +96,7 @@
             <div class="alert alert-danger" ng-show="contatoForm.nome.$error.required && contatoForm.nome.$dirty">Favor preencha o nome!!!</div>
             <div class="alert alert-danger" ng-show="contatoForm.telefone.$error.required && contatoForm.telefone.$dirty">Favor preencha o telefone!!!</div>
             <button class=" btn btn-success btn-block" ng-click="adicionarContato(contato)" ng-disabled="">Adicionar Contato</button>
-            <button class=" btn btn-danger btn-block" ng-click="deletarContatos(contatos)" ng-if="!isContatoSelecionado(contatos)">Apagar Contato</button>
+            <button class=" btn btn-danger btn-block" ng-click="deletarContatos(contatos)" ng-if="isContatoSelecionado(contatos)">Apagar Contato</button>
         </div>
     </body>
     <div ng-include="'footer.html'">
