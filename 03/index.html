@@ -79,14 +79,18 @@
                 </tr>
             </table>
             <hr/>
-            {{contato}}
-            <input class="form-control" type="text" ng-model="contato.nome" placeholder="nome"/>
-            <input class="form-control" type="text" ng-model="contato.telefone" placeholder="telefone"/>
-            <select class="form-control" ng-model="contato.operadora" ng-options="operadora.codinome for operadora in operadoras">
-                <option value="">Selecione uma operadora</option>
-            </select>
-            <button class=" btn btn-success btn-block" ng-click="adicionarContato(contato)" ng-disabled="!contato.nome || !contato.telefone">Adicionar Contato</button>
-            <button class=" btn btn-danger btn-block" ng-click="deletarContatos(contatos)" ng-disabled="!isContatoSelecionado(contatos)">Apagar Contato</button>
+            É valido: {{contatoForm.$valid}} <br/>
+            É invalido: {{contatoForm.$invalid}} <br/>
+            <form name="contatoForm">
+
+                <input class="form-control" type="text" ng-model="contato.nome" placeholder="nome" ng-required="true"/>
+                <input class="form-control" type="text" ng-model="contato.telefone" placeholder="telefone" ng-required="true"/>
+                <select class="form-control" ng-model="contato.operadora" ng-options="operadora.codinome for operadora in operadoras">
+                    <option value="">Selecione uma operadora</option>
+                </select>
+            </form>
+            <button class=" btn btn-success btn-block" ng-click="adicionarContato(contato)" ng-disabled="">Adicionar Contato</button>
+            <button class=" btn btn-danger btn-block" ng-click="deletarContatos(contatos)" ng-if="!isContatoSelecionado(contatos)">Apagar Contato</button>
         </div>
     </body>
     <div ng-include="'footer.html'">
